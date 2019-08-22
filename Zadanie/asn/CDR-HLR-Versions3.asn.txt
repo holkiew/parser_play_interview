@@ -1,0 +1,23 @@
+CDR-HLR-Version3 DEFINITIONS IMPLICIT TAGS ::=
+BEGIN
+
+EXPORTS
+  CDR-HLR-VERSION3
+;
+IMPORTS
+  Timestamp,
+  IMSI,
+  CdrType,
+  ISDN-AddressString
+FROM DataTypes
+;
+
+CDR-HLR-VERSION3 ::= SEQUENCE {
+  timestamp  Timestamp,
+  type       CdrType,
+  msisdn  [0] ISDN-AddressString OPTIONAL,
+  imsi    [1] IMSI,
+  vlr     [2] ISDN-AddressString
+}
+
+END

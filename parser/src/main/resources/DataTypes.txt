@@ -1,0 +1,18 @@
+DataTypes DEFINITIONS IMPLICIT TAGS ::=
+BEGIN
+
+EXPORTS
+  AddressString,
+  ISDN-AddressString,
+  Timestamp,
+  IMSI,
+  CdrType
+;
+
+AddressString        ::= OCTET STRING (SIZE (0..maxAddressLength))
+ISDN-AddressString   ::= AddressString (SIZE (1..maxISDN-AddressLength))
+Timestamp   ::= OCTET STRING
+IMSI        ::= OCTET STRING (SIZE (3..8))
+CdrType ::= ENUMERATED {updateLocation(2), cancelLocation(3)}
+
+END
